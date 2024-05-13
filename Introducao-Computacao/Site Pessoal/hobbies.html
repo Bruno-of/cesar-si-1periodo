@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Hobbies</title>
+    <link rel="stylesheet" href="css/css-geral.css">
+</head>
+<body>
+    
+    <!-- Cabeçalho/Navegação -->
+    <header>
+        <h1>Página Pessoal</h1>
+        <nav class="formatacao-header">
+            <a href="index.html">Home</a>
+            <a href="experiencia-profissional.html">Minhas Experiências</a>
+            <a href="hobbies.html">Meus Hobbies</a>
+        </nav>
+    </header>
+
+    <!-- Corpo principal do site -->
+    <main>
+
+        <div style="text-align: center; margin: 85px;">
+            <h3>Sobre mim</h3>
+            <p>Aqui você vai encontrar um pouco do meu lado pessoal.</p>
+            <img src="img/eu-nina-e-fred.jpeg" alt="Bruno e seus pets">
+        </div>
+        
+        <section>
+
+            <div>
+                <hr>
+                <h4>Coisas que mais gosto de fazer:</h4>
+                <br>
+                
+                <!-- Igreja -->
+                <h5>1. Ir à Igreja</h5>
+                <ol>
+                    <img src="img/paroquia-sao-jose.jpg" alt="Foto da paróquia de São José">
+                    <p>Paróquia de São José em Carpina</p>
+                    <p>Vou à paróquia para as Santas missas e confissões.</p>
+                </ol>
+                <hr>
+                <!-- Livros -->
+                <h5>2. Ler livros</h5>
+                <ol>
+                    <img src="img/livros-quarto.jpeg" alt="Livros de Bruno">
+                    <p>Livros que estou lendo atualmente:</p>
+                    <li>Bíblia (estou em levítico);</li>
+                    <li>Atomic Habits - James Clear;</li>
+                    <li>The C Programming Language - Kernighan & Ritchie</li>
+                    <li>A vida intelectual do Pe. A.-D. Sertillanges;</li>
+                </ol>
+                <hr>
+                <!-- Familia -->
+                <h5>3. Tempo com família</h5>
+                <p>Dedicar tempo à família é essencial e estou buscando cada vez mais fortalecer os laços</p>
+                <hr>
+                <!-- Videos -->
+                <h3>Assistir vídeos no Youtube</h3>
+                <p>Alguns dos tópicos que assisto são:</p>
+                <ul class="" type="circle">
+                    <li>Cristianismo & história da Santa Igreja;</li>
+                    <li>Canal no Youtube do professor Guilherme Freire;</li>
+                    <li>Bodybuilding (me interesso pelo tema desde 2017);</li>
+                    <li>Programação na linguagem C;</li>
+                    <li>Web Hacking e CTF's (embora não esteja praticando muitos);</li>
+                    <li>Desenvolvimento pessoal;</li>
+                    <li>Boxe;</li>
+                </ul>
+                <p>E por aí vai :)</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <hr>
+    
+    
+</body>
+
+    <!-- Rodapé da página -->
+    <footer class="footer">
+        <table style="border: none;">
+            <thead>
+                <tr>
+                    <th>Me contate enviando uma mensagem:</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="nome">Nome:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="nome" id="nome">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">Seu E-mail:</label></td>
+                    <td><input type="text" name="seuEmail" id="seuEmail"></td>
+                </tr>
+                <tr>
+                    <td><label for="assunto">Assunto:</label></td>
+                    <td>
+                        <select name="assunto" id="assunto">
+                            <option value="contatoPessoal">Contato Pessoal</option>
+                            <option value="contatoProfissional">Contato Profissional</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="data">Digite a data de hoje:</label></td>
+                    <td>
+                        <input type="datetime-local" name="dataAtual" id="dataAtual">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="mensagem">Mensagem:</label></td>
+                    <td>
+                        <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+                        <br><input type="submit" name="" value="Enviar Mensagem">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+
+</html>

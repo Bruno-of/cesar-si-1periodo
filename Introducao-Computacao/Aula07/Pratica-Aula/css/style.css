@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+article {
+    background-color: aquamarine;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+/* Container pai dos articles */
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Filhos do container section acima */
+article {
+    flex: 200px;
+}
+
+div {
+    /* border: 2px solid black; */
+    width: 700px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}

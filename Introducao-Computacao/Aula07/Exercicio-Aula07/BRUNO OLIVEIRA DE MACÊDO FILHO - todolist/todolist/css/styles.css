@@ -1,0 +1,95 @@
+:root {
+  --bg-color: #f6e4de;
+  --bg-header-footer: #a79277;
+  --txt-header-footer: #fff2e1;
+  --details: #d1bb9e;
+  --bg-button: #ead8c0;
+  --txt-button: #795458;
+}
+
+/* Formatação Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 50vh;
+ 
+}
+
+header,
+footer {
+  background-color: var(--bg-header-footer);
+  color: var(--txt-header-footer);
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Main */
+main{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Formulário */
+form {
+  text-align: center;
+  margin: 20px auto;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--details);
+}
+
+form input[type="text"]:focus {
+  border-color: var(--txt-button);
+  outline: none;
+}
+
+form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: var(--bg-button);
+  color: var(--txt-button);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--txt-button);
+  color: var(--bg-button);
+}
+
+/* Section */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* Section - Card */
+.card {
+  background-color: var(--txt-header-footer);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px var(--bg-header-footer);
+  padding: 20px;
+  margin: 10px;
+  width: 250px;
+}
+
+.card h2, p{
+    color: var(--txt-button);
+}
+
+.card h2{
+    margin-bottom: 15px;
+}

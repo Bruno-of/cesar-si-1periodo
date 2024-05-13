@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Vindo!</title>
+    <link rel="stylesheet" href="css/css-geral.css">
+</head>
+<body>
+    
+    <!-- Cabeçalho/Navegação -->
+    <header>
+        <h1>Página Pessoal</h1>
+        <nav class="formatacao-header">
+            <a href="index.html">Home</a>
+            <a href="experiencia-profissional.html">Minhas Experiências</a>
+            <a href="hobbies.html">Meus Hobbies</a>
+        </nav>
+    </header>
+
+    <!-- Corpo principal do site -->
+    <main>
+        <div class="container-home">
+            <img src="img/github.jpg" alt="Foto de Bruno">
+            <h3>Muito prazer, sou Bruno Oliveira</h3>
+            <p>Que bom te ver em minha página pessoal 😃</p>
+            <br>
+            <h4>Breve introdução:</h4>
+            <p>Neste site você poderá entender melhor o meu perfil pessoal e profissional.</p>
+
+            <p>Sou uma pessoa estudiosa e interessada.</p>
+            <p>Atualmente curso <strong>Sistemas da Informação</strong> na CESAR School e <strong>Segurança da Informação</strong> no SENAC SP</p>
+
+        </div>
+        
+    </main>
+
+    <hr>
+
+</body>
+
+<!-- Rodapé da página -->
+<footer class="footer">
+    <table style="border: none;">
+        <thead>
+            <tr>
+                <th>Me contate enviando uma mensagem:</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="nome">Nome:</label>
+                </td>
+                <td>
+                    <input type="text" name="nome" id="nome">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email">Seu E-mail:</label></td>
+                <td><input type="text" name="seuEmail" id="seuEmail"></td>
+            </tr>
+            <tr>
+                <td><label for="assunto">Assunto:</label></td>
+                <td>
+                    <select name="assunto" id="assunto">
+                        <option value="contatoPessoal">Contato Pessoal</option>
+                        <option value="contatoProfissional">Contato Profissional</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="data">Digite a data de hoje:</label></td>
+                <td>
+                    <input type="datetime-local" name="dataAtual" id="dataAtual">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="mensagem">Mensagem:</label></td>
+                <td>
+                    <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+                    <br><input type="submit" name="" value="Enviar Mensagem">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</footer>
+
+</html>

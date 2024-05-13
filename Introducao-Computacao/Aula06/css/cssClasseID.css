@@ -1,0 +1,21 @@
+
+
+/* Classes */
+.texto-roxo {
+    text-align: center;
+    color: blueviolet;
+}
+
+
+.texto-verde {
+    color: green;
+    font-style: italic;
+    font-size: 24px;
+}
+
+/* IDs */
+#texto-unico {
+    font-size: 24px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: cadetblue;
+}
