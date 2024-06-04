@@ -1,11 +1,11 @@
 import os
 from utils import limpar_tela
 from time import sleep
-import home, quem_somos, blog, loja, cruds
-
+import home, quem_somos, blog, loja, cruds, adote_ja
 
 
 def menu_inicial():
+
     print("*** Bem vindo ao sistema Adota Fácil ***")
     print("\nMenu de acesso\n")
     print("[1] - Acessar página Home")
@@ -13,8 +13,7 @@ def menu_inicial():
     print("[3] - Acessar página Quem Somos")
     print("[4] - Acessar página Blog")
     print("[5] - Acessar página Loja")
-    print("[6] - Acessar página Cadastro do sistema")
-    print("[7] - Acessar página Login")
+    print("[6] - Acessar página CRUD do sistema")
     print("\n[0] - Para encerrar o sistema")
 
     try:
@@ -24,8 +23,7 @@ def menu_inicial():
             case 1:
                 home.home()
             case 2:
-                #Chamar a função da página [Adote Já]
-                pass
+                adote_ja.menu_adocao()
             case 3:
                 quem_somos.quem_somos()
             case 4:
@@ -34,14 +32,12 @@ def menu_inicial():
                 loja.loja()
             case 6:
                 cruds.menu_crud()
-            case 7:
-                # Chamar a função da página [Login]
-                pass
             case 0:
                 exit()
             case _:
                 limpar_tela()
-                print(">>> Opção fora do range do menu!!! Tente novamente <<<\n")
+                print(
+                    ">>> Opção fora do range do menu!!! Tente novamente <<<\n")
                 sleep(2)
                 menu_inicial()
 
@@ -55,10 +51,11 @@ def menu_inicial():
     exit()
 
 
-# Chamar a função do menu inicial para iniciar o programa
+
 def main():
     limpar_tela()
     menu_inicial()
+
 
 
 if __name__ == '__main__':

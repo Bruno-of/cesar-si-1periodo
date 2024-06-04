@@ -2,9 +2,10 @@ import os, json
 from time import sleep
 from utils import limpar_tela
 
+
 def menu_listagem():
+
     from cruds import menu_crud
-    
     limpar_tela()
 
     print("*** Menu de Listagem ***\n")
@@ -28,7 +29,8 @@ def menu_listagem():
                 menu_crud()
             case _:
                 limpar_tela()
-                print(">>> Opção fora do range do menu!!! Tente novamente <<<\n")
+                print(
+                    ">>> Opção fora do range do menu!!! Tente novamente <<<\n")
                 sleep(2)
                 menu_listagem()
 
@@ -37,13 +39,14 @@ def menu_listagem():
         menu_listagem()
 
 
+
 def listar_pessoa_fisica():
     from cruds import menu_crud
     limpar_tela()
     print("*** Listar Pessoas ***")
 
     try:
-        with open ('cadastro_pessoa_fisica.json', 'r', encoding='utf-8') as arquivo:
+        with open('cadastro_pessoa_fisica.json', 'r', encoding='utf-8') as arquivo:
             pessoas_fisicas = json.load(arquivo)
     except FileNotFoundError:
         pessoas_fisicas = {}
@@ -51,12 +54,13 @@ def listar_pessoa_fisica():
     if pessoas_fisicas:
         print("\nPessoas Cadastradas:")
         for cpf in pessoas_fisicas:
-            print(f"Identificação da pessoa - {cpf}")
+            print(f"Identificação da pessoa (CPF)- {cpf}")
     else:
         print("\nNenhuma pessoa cadastrada.")
 
-
-    consulta_pessoa = input("\n> Digite o CPF da pessoa que deseja consultar ou aperte [0] para voltar ao menu de listagem: ")
+    consulta_pessoa = input(
+        "\n> Digite o CPF da pessoa que deseja consultar ou aperte [0] para voltar ao menu de listagem: "
+    )
 
     if consulta_pessoa == '0':
         menu_listagem()
@@ -64,13 +68,18 @@ def listar_pessoa_fisica():
     if consulta_pessoa in pessoas_fisicas:
         pessoa = pessoas_fisicas[consulta_pessoa]
 
-        print(f"\nDados do PET {consulta_pessoa}")
-        print(f"Nome: {pessoa['Nome']}")
-        print(f"Endereço: {pessoa['Endereço']}")
-        print(f"Cidade: {pessoa['Cidade']}")
-        print(f"Estado: {pessoa['Estado']}")
+        print(f"\n# Dados da pessoa de CPF '{consulta_pessoa}' #")
+        print(f"- Nome: {pessoa['Nome']}")
+        print(f"- CPF: {pessoa['CPF']}")
+        print(f"- E-mail: {pessoa['E-mail']}")
+        print(f"- Senha: {pessoa['Senha']}")
+        print(f"- Idade: {pessoa['Idade']}")
+        print(f"- Endereço: {pessoa['Endereço']}")
+        print(f"- Cidade: {pessoa['Cidade']}")
+        print(f"- Estado: {pessoa['Estado']}")
+        print(f"- Cadastrou um Pet?: {pessoa['Cadastrou_Pet']}")
 
-        opcao = input("\n> Deseja consultar mais uma ONG? [S/N] ").lower()
+        opcao = input("\n> Deseja consultar mais uma Pessoa? [S/N] ").lower()
 
         if opcao == 's':
             limpar_tela()
@@ -86,7 +95,7 @@ def listar_pessoa_fisica():
         else:
             limpar_tela()
             print("Opção inválida. Digite apenas [S] ou [N].\n")
-            print("Voltando à listagem de pessoas...")
+            print("Voltando à listagem de pessoas...\n")
             sleep(3)
             listar_pessoa_fisica()
     else:
@@ -96,14 +105,17 @@ def listar_pessoa_fisica():
         sleep(3)
         listar_pessoa_fisica()
 
-    
+
+
 def listar_ong():
+
     from cruds import menu_crud
     limpar_tela()
+
     print("*** Listar ONGs ***")
 
     try:
-        with open ('cadastro_ong.json', 'r', encoding='utf-8') as arquivo:
+        with open('cadastro_ong.json', 'r', encoding='utf-8') as arquivo:
             ongs = json.load(arquivo)
     except FileNotFoundError:
         ongs = {}
@@ -115,8 +127,9 @@ def listar_ong():
     else:
         print("\nNenhuma ONG cadastrada.")
 
-
-    consulta_ong = input("\n> Digite o CNPJ da ONG que deseja consultar ou aperte [0] para voltar ao menu de listagem: ")
+    consulta_ong = input(
+        "\n> Digite o CNPJ da ONG que deseja consultar ou aperte [0] para voltar ao menu de listagem: "
+    )
 
     if consulta_ong == '0':
         menu_listagem()
@@ -124,11 +137,16 @@ def listar_ong():
     if consulta_ong in ongs:
         ong = ongs[consulta_ong]
 
-        print(f"\nDados da ONG {consulta_ong}")
-        print(f"Nome: {ong['Nome']}")
-        print(f"Endereço: {ong['Endereço']}")
-        print(f"Cidade: {ong['Cidade']}")
-        print(f"Estado: {ong['Estado']}")
+        print(f"\n# Dados da ONG '{consulta_ong}' #")
+        print(f"- Nome: {ong['Nome']}")
+        print(f"- CNPJ: {ong['CNPJ']}")
+        print(f"- E-mail: {ong['E-mail']}")
+        print(f"- Senha: {ong['Senha']}")
+        print(f"- Endereço: {ong['Endereço']}")
+        print(f"- Cidade: {ong['Cidade']}")
+        print(f"- Estado: {ong['Estado']}")
+        print(f"- Instagram: https://www.instagram.com/{ong['Instagram']}")
+        print(f"- Cadastrou um Pet?: {ong['Cadastrou_Pet']}")
 
         opcao = input("\n> Deseja consultar mais uma ONG? [S/N] ").lower()
         if opcao == 's':
@@ -145,7 +163,7 @@ def listar_ong():
         else:
             limpar_tela()
             print("Opção inválida. Digite apenas [S] ou [N].\n")
-            print("Voltando à listagem de ong...")
+            print("Voltando à listagem de ong...\n")
             sleep(3)
             listar_ong()
     else:
@@ -157,11 +175,12 @@ def listar_ong():
 
 
 def listar_pets():
+    
     from cruds import menu_crud
     print("*** Listar PETS ***")
 
     try:
-        with open ('cadastro_pet.json', 'r', encoding='utf-8') as arquivo:
+        with open('cadastro_pet.json', 'r', encoding='utf-8') as arquivo:
             pets = json.load(arquivo)
     except FileNotFoundError:
         pets = {}
@@ -173,8 +192,9 @@ def listar_pets():
     else:
         print("\nNenhum PET cadastrado.")
 
-
-    consulta_pet = input("\nDigite o ID do PET que deseja consultar ou aperte [0] para voltar ao menu de listagem: ")
+    consulta_pet = input(
+        "\nDigite o ID do PET que deseja consultar ou aperte [0] para voltar ao menu de listagem: "
+    ).title()
 
     if consulta_pet == '0':
         menu_listagem()
@@ -182,30 +202,36 @@ def listar_pets():
     if consulta_pet in pets:
         pet = pets[consulta_pet]
 
-        print(f"\nDados do PET {consulta_pet}")
-        print(f"Nome: {pet['Nome']}")
-        print(f"Raça: {pet['Raça']}")
-        print(f"Idade: {pet['Idade']}")
-        print(f"Endereço: {pet['Endereço']}")
-        print(f"Cidade: {pet['Cidade']}")
-        print(f"Estado: {pet['Estado']}")
+        print(f"\n# Dados do PET {consulta_pet} #")
+        print(f"- Nome: {pet['Nome']}")
+        print(f"- Espécie: {pet['Espécie']}")
+        print(f"- CEP onde reside: {pet['CEP_onde_reside']}")
+        print(f"- Raça: {pet['Raça']}")
+        print(f"- Sexo: {pet['Sexo']}")
+        print(f"- Idade: {pet['Idade']}")
+        print(f"- Porte: {pet['Porte']}")
+        print(f"- Cor: {pet['Cor']}")
+        print(f"- Peso: {pet['Peso']}")
+        print(f"- Castrado: {pet['Castrado']}")
+        print(f"- Vacinado: {pet['Vacinado']}")
+        print(f"- Vermifugado: {pet['Vermifugado']}")
 
         opcao = input("\n> Deseja consultar mais um PET? [S/N] ").lower()
         if opcao == 's':
             limpar_tela()
-            print("Fazendo mais uma consulta...")
+            print("Fazendo mais uma consulta...\n")
             sleep(3)
             listar_pets()
         elif opcao == 'n':
             limpar_tela()
-            print("Ok. Voltando ao menu de CRUD...")
+            print("Ok. Voltando ao menu de CRUD...\n")
             sleep(3)
             limpar_tela()
             menu_crud()
         else:
             limpar_tela()
             print("Opção inválida. Digite apenas [S] ou [N].\n")
-            print("Voltando à listagem de pets...")
+            print("Voltando à listagem de pets...\n")
             sleep(3)
             listar_pets()
     else:
@@ -214,4 +240,3 @@ def listar_pets():
         print("Tente novamente.")
         sleep(3)
         listar_pets()
-

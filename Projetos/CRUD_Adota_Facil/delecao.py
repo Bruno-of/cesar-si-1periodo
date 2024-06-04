@@ -6,7 +6,6 @@ from utils import carregar_ong, salvar_ong
 from utils import carregar_pet, salvar_pet
 
 
-
 def menu_delecao():
    from cruds import menu_crud
 
@@ -38,7 +37,7 @@ def menu_delecao():
 
    except ValueError:
       limpar_tela()
-      print(">>> Opção inválida!!! Digite um número inteiro. <<<\n")
+      print(">>> Opção inválida!!! Valor inserido não compatível! <<<\n")
       sleep(2)
       menu_delecao()
 
@@ -48,22 +47,24 @@ def delecao_pessoa_fisica():
    print("*** Deleção de Pessoas ***")
 
    try:
-      with open('cadastro_pessoa_fisica.json', 'r', encoding='utf-8') as arquivo:
+      with open('cadastro_pessoa_fisica.json', 'r',
+                encoding='utf-8') as arquivo:
          pessoas_fisicas = json.load(arquivo)
    except FileNotFoundError:
       pessoas_fisicas = {}
-   
 
    if pessoas_fisicas:
       print("\nClientes cadastrados:")
       for cpf in pessoas_fisicas:
-         print(f"Identificação da pessoa - '{cpf}' ")
+         print(f"Identificação da pessoa (CPF)- '{cpf}' ")
    else:
       print("Nenhuma pessoa física cadastrada.")
       input("\nPressione [ENTER] para voltar ao menu de deleção.")
       menu_delecao()
 
-   pessoa_para_deletar = input("\n> Digite o CPF do cliente para excluir seus dados ou aperte [0] para voltar ao menu de deleção: ")
+   pessoa_para_deletar = input(
+       "\n> Digite o CPF do cliente para excluir seus dados ou aperte [0] para voltar ao menu de deleção: "
+   )
    limpar_tela()
 
    if pessoa_para_deletar == '0':
@@ -81,7 +82,9 @@ def delecao_pessoa_fisica():
       menu_delecao()
 
    else:
-      print(f"Pessoa de CPF '{pessoa_para_deletar}' não encontrada nos cadastros.")
+      print(
+          f"Pessoa de CPF '{pessoa_para_deletar}' não encontrada nos cadastros."
+      )
       print("Tente novamente.")
       sleep(3)
       delecao_pessoa_fisica()
@@ -106,7 +109,9 @@ def delecao_ong():
       input("Pressione [ENTER] para voltar ao menu de deleção.")
       menu_delecao()
 
-   ong_para_deletar = input("\n> Digite o CNPJ da ONG para excluir seus dados ou aperte [0] para voltar ao menu de deleção: ")
+   ong_para_deletar = input(
+       "\n> Digite o CNPJ da ONG para excluir seus dados ou aperte [0] para voltar ao menu de deleção: "
+   )
    limpar_tela()
 
    if ong_para_deletar == '0':
@@ -149,8 +154,10 @@ def delecao_pet():
       print("Nenhum PET cadastrado.")
       input("Pressione [ENTER] para voltar ao menu de deleção.")
       menu_delecao()
-      
-   pet_para_deletar = input("\n> Digite o nome do PET para excluir seus dados ou aperte [0] para voltar ao menu de deleção: ")
+
+   pet_para_deletar = input(
+       "\n> Digite o nome do PET para excluir seus dados ou aperte [0] para voltar ao menu de deleção: "
+   ).title()
    limpar_tela()
 
    if pet_para_deletar == '0':
@@ -172,4 +179,3 @@ def delecao_pet():
       print("Tente novamente.")
       sleep(3)
       delecao_pet()
-
